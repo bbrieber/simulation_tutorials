@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.70.0 commit date:2014-03-19, commit time:05:02, hash:19e627c</authoring_tool>
+    </contributor>
+    <created>2014-07-14T11:35:47</created>
+    <modified>2014-07-14T11:35:47</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="Material_001-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Material_002-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.2023546 0.1110021 0.06165644 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Material_001-material" name="Material_001">
+      <instance_effect url="#Material_001-effect"/>
+    </material>
+    <material id="Material_002-material" name="Material_002">
+      <instance_effect url="#Material_002-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Eye-mesh" name="Eye">
+      <mesh>
+        <source id="Eye-mesh-positions">
+          <float_array id="Eye-mesh-positions-array" count="99">-0.03894174 -0.08475375 -0.08025568 0.07739692 -0.1472538 -0.1505681 0.1485581 -0.1941289 -0.1896306 0.1094958 0.001183569 -0.2677557 0.04470658 0.001183688 -0.2130681 -0.05456668 0.001183748 -0.1115056 -0.07019162 0.07930874 -0.08025568 0.02270966 0.1496212 -0.1505681 0.07824599 0.1964961 -0.1896306 0.07043355 0.2746211 -0.002130687 -0.01550394 0.2121212 -0.002130687 -0.07019156 0.1105588 -0.002130687 -0.07019162 0.07930874 0.08380681 -0.015504 0.1496212 0.1463068 0.07824599 0.1964961 0.1931818 0.1094958 0.001183569 0.2713068 0.007933318 0.001183688 0.2088068 -0.05456668 0.001183748 0.1150568 -0.03894174 -0.08475375 0.08380681 0.03918313 -0.1472538 0.1463068 0.1485581 -0.1941289 0.1931818 0.164183 -0.2722539 -0.002130687 0.05480813 -0.2097538 -0.002130687 -0.03112924 -0.1160037 -0.002130687 -0.04675424 -0.1238162 -0.002130687 -0.05456674 -0.09256619 0.09161931 -0.07800418 0.001183748 0.1306818 -0.09362906 0.0871213 0.09161931 -0.09362906 0.1261838 -0.002130687 -0.09362906 0.0871213 -0.08806818 -0.1014416 0.001183807 -0.002130687 -0.07800418 0.001183748 -0.1271306 -0.05456674 -0.09256619 -0.08806818</float_array>
+          <technique_common>
+            <accessor source="#Eye-mesh-positions-array" count="33" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Eye-mesh-normals">
+          <float_array id="Eye-mesh-normals-array" count="99">-0.1060213 -0.6981109 -0.70806 -0.6206855 -0.5838191 -0.5233009 -0.6111027 -0.790643 -0.03729361 -0.5895261 -0.6328623 -0.5018769 -0.6753136 -0.1093478 -0.7293313 -0.6585284 -0.1389813 -0.7395856 -0.1272317 -0.005645871 -0.9918516 -0.1778618 0.6521195 -0.7368999 -0.7061678 0.4202399 -0.5698111 -0.6708884 0.4627522 -0.5794245 -0.7357708 0.6757714 -0.0439161 -0.6317636 0.7747734 -0.02331614 -0.2873928 0.9551378 -0.07116913 -0.2889187 0.6621601 0.6913968 -0.7191076 0.4551225 0.525071 -0.5715812 0.5297708 0.6265755 -0.6646626 -0.1018708 0.7401349 -0.5328227 -0.1224097 0.8373059 -0.2368541 -0.03207492 0.9710074 -0.1949217 -0.7320475 0.6527299 -0.6203193 -0.6084476 0.4949187 -0.5084384 -0.6722007 0.5381329 -0.5363323 -0.8437758 -0.01950132 -0.1825312 -0.9815669 -0.0563066 -0.237434 -0.7219764 0.6498612 -0.2272713 -0.9737236 -0.01220738 -0.3563951 -0.0374462 0.9335612 -0.4347667 0.6263314 0.6470229 -0.4116031 0.9112522 -0.01226842 -0.4364147 0.6181219 -0.6537675 -0.3523972 -0.03689682 -0.9350872 -0.2390515 -0.7150487 -0.6568804 -0.9829707 -0.1835993 -0.005310177</float_array>
+          <technique_common>
+            <accessor source="#Eye-mesh-normals-array" count="33" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Eye-mesh-vertices">
+          <input semantic="POSITION" source="#Eye-mesh-positions"/>
+        </vertices>
+        <polylist material="Material_001-material" count="56">
+          <input semantic="VERTEX" source="#Eye-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Eye-mesh-normals" offset="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>0 0 1 1 22 2 22 2 1 1 2 3 1 1 4 4 3 5 0 0 5 6 4 4 5 6 6 7 7 8 4 4 7 8 8 9 7 8 10 10 9 11 6 7 11 12 10 10 11 12 12 13 13 14 13 14 14 15 9 11 16 16 15 17 14 15 17 18 16 16 13 14 18 19 19 20 16 16 19 20 20 21 15 17 22 2 21 22 20 21 23 23 22 2 19 20 18 19 25 24 24 25 17 18 26 26 25 24 12 13 27 27 26 26 11 12 28 28 27 27 11 12 6 7 29 29 6 7 5 6 31 30 5 6 0 0 32 31 0 0 23 23 24 25 30 32 32 31 24 25 31 30 32 31 30 32 30 32 29 29 31 30 30 32 28 28 29 29 30 32 27 27 28 28 30 32 26 26 27 27 30 32 25 24 26 26 30 32 24 25 25 24 23 23 0 0 22 2 21 22 22 2 2 3 2 3 1 1 3 5 1 1 0 0 4 4 4 4 5 6 7 8 3 5 4 4 8 9 8 9 7 8 9 11 7 8 6 7 10 10 10 10 11 12 13 14 10 10 13 14 9 11 13 14 16 16 14 15 12 13 17 18 13 14 17 18 18 19 16 16 16 16 19 20 15 17 19 20 22 2 20 21 18 19 23 23 19 20 23 23 18 19 24 25 18 19 17 18 25 24 17 18 12 13 26 26 12 13 11 12 27 27 28 28 11 12 29 29 29 29 6 7 31 30 31 30 5 6 32 31 32 31 0 0 24 25</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Eye" name="Eye" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Eye-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material_001-material" target="#Material_001-material"/>
+              <instance_material symbol="Material_002-material" target="#Material_002-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
