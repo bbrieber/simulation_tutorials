@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0"/>
+  <arg name="R" default="0"/>
+  <arg name="P" default="0"/>
+  <arg name="Y" default="0"/>
+  <arg name="start_second" default="true"/>
+  
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+	<arg name="world_name" value="$(find suzanne_robot_gazebo)/worlds/empty.world"/>
+    </include>
+
+
+    
+         
+<group  ns="suz1">
+  <include file="$(find suzanne_robot_description)/launch/spawn_robot.launch">
+    <arg name="x" value="-5"/>
+    <arg name="y" value="-5"/>
+    <arg name="z" value="0"/>
+    <arg name="Y" value="0"/>
+    <arg name="robot_namespace" value="suz1"/>
+    <arg name="robot_name" value="suz1"/>
+  </include>
+<!--
+  <node name="controller" pkg="suzanne_robot_control" type="mover.py" screen="true"/>
+-->
+</group>
+
+
+
+<group if="$(arg start_second)" ns="suz2">
+  <include file="$(find suzanne_robot_description)/launch/spawn_robot.launch">
+    <arg name="x" value="5"/>
+    <arg name="y" value="5"/>
+    <arg name="z" value="0"/>
+    <arg name="Y" value="0"/>
+    <arg name="robot_namespace" value="suz2"/>
+    <arg name="robot_name" value="suz2"/>
+  </include>
+<!--
+  <node name="controller" pkg="suzanne_robot_control" type="mover.py" screen="true"/>
+-->
+</group>
+
+
+
+</launch>
