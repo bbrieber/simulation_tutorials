@@ -12,10 +12,10 @@
   <arg name="robot_namespace" default="suzanne"/>
     
   
-  
   <arg name="model" default="$(find suzanne_robot_description)/urdf/suzanne_bot.urdf.xacro"/>
   <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)' prefix:=$(arg robot_namespace)" />
   
+  <rosparam file="$(find suzanne_robot_controller)/config/controller.config"  command="load" />    
 <node name="spawn_rover" pkg="gazebo_ros" type="spawn_model" args="
     -param robot_description 
     -urdf 
@@ -30,7 +30,11 @@
   "/>
   
   
-
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="/$(arg robot_namespace)" args="
+        joint_state_controller
+	">
+  </node>
    
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
      <param name="publish_frequency" type="double" value="50.0" />

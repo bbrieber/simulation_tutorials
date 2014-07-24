@@ -60,8 +60,8 @@
 <joint name="base_footprint_base_link_joint" type="revolute">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    
-      <origin xyz="  0.0000   0.0000   1.0607" rpy="  0.0000  -0.0000   0.0000" />
+    <!-- The whole model points backwards in blender so i just rotate it here...-->
+      <origin xyz="  0.0000   0.0000   1.0607" rpy="  0.0000  -0.0000   3.141592654" />
 
     <axis xyz="1 0 0"/>
     <!-- 
@@ -485,11 +485,22 @@
 
   <gazebo>
     <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <robotNamespace>/$(arg prefix)</robotNamespace>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <odometryRate>20.0</odometryRate>
-      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <robotBaseFrame>/$(arg prefix)/base_footprint</robotBaseFrame><!-- this line could be removed but only if the base link stays the same-->
     </plugin>
   </gazebo>
+  
+  
+    <gazebo>
+        <plugin name="suz_ros_control" filename="libgazebo_ros_control.so">
+            <robotParam>$(arg prefix)/robot_description</robotParam>
+            <robotNamespace>/$(arg prefix)</robotNamespace>
+            <controlPeriod>0.001</controlPeriod>
+        </plugin>
+    </gazebo>
+  
 </robot>

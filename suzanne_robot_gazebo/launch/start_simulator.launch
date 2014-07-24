@@ -8,6 +8,8 @@
   <arg name="P" default="0"/>
   <arg name="Y" default="0"/>
   <arg name="start_second" default="true"/>
+  <arg name="robot1" default="suz1"/>
+  <arg name="robot2" default="suz2"/>
   
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
 	<arg name="world_name" value="$(find suzanne_robot_gazebo)/worlds/empty.world"/>
@@ -16,31 +18,39 @@
 
     
          
-<group  ns="suz1">
+<group  ns="$(arg robot1)">
   <include file="$(find suzanne_robot_description)/launch/spawn_robot.launch">
     <arg name="x" value="-5"/>
     <arg name="y" value="-5"/>
     <arg name="z" value="0"/>
     <arg name="Y" value="0"/>
-    <arg name="robot_namespace" value="suz1"/>
-    <arg name="robot_name" value="suz1"/>
+    <arg name="robot_namespace" value="$(arg robot1)"/>
+    <arg name="robot_name" value="$(arg robot1)"/>
   </include>
-<!--
-  <node name="controller" pkg="suzanne_robot_control" type="mover.py" screen="true"/>
--->
+
+  <node if="$(arg start_second)" name="controller" pkg="suzanne_robot_controller" type="follow.py" output="screen"
+  
+  args="$(arg robot1) $(arg robot2) --follow"
+  />
 </group>
 
 
 
-<group if="$(arg start_second)" ns="suz2">
+<group if="$(arg start_second)" ns="$(arg robot2)">
   <include file="$(find suzanne_robot_description)/launch/spawn_robot.launch">
     <arg name="x" value="5"/>
     <arg name="y" value="5"/>
     <arg name="z" value="0"/>
     <arg name="Y" value="0"/>
-    <arg name="robot_namespace" value="suz2"/>
-    <arg name="robot_name" value="suz2"/>
+    <arg name="robot_namespace" value="$(arg robot2)"/>
+    <arg name="robot_name" value="$(arg robot2)"/>
   </include>
+  
+  
+  <node if="$(arg start_second)" name="controller" pkg="suzanne_robot_controller" type="follow.py" output="screen"
+  
+  args="$(arg robot2) $(arg robot1) --flee"
+  />
 <!--
   <node name="controller" pkg="suzanne_robot_control" type="mover.py" screen="true"/>
 -->
